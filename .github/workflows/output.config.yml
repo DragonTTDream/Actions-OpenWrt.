@@ -12,8 +12,8 @@ on:
     inputs:
       ssh:
         description: 'SSH connection'
-        required: true
-        default: 'true'
+        required: false
+        default: 'false'
   schedule:
     - cron: '0 8 * * 0'
 
