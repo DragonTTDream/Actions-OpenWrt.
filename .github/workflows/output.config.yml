@@ -97,7 +97,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: openwrt-config
-        path: oopenwrt/.config
+        path: .config
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
