@@ -1,4 +1,4 @@
-name N1_s950d openwrt
+name: N1_s950d openwrt
 
 on:
   repository_dispatch:
