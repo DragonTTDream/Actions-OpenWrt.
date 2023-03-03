@@ -98,11 +98,15 @@ jobs:
         cd openwrt
         make defconfig
         
-    - name: Upload .config
+    - name: Copy .config to config.buildinfo
+      run: |
+        cp .config config.buildinfo
+    
+    - name: Upload config
       uses: actions/upload-artifact@v2
       with:
        name: config
-       path: openwrt/.config
+       path: openwrt/config.buildinfo
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
