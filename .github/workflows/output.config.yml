@@ -95,7 +95,7 @@ jobs:
     - name: Load seed.config into env var
       run: |
        cd openwrt
-       made defconfig
+       make defconfig
        export SEED_CONFIG=$(cat seed.config)
        echo "SEED_CONFIG=$SEED_CONFIG" >> $GITHUB_ENV
    
