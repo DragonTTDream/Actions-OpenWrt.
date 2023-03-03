@@ -126,18 +126,6 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-    - name: Organize files
-      id: organize
-      if: steps.compile.outputs.status == 'success' && !cancelled()
-      run: |
-        cd $GITHUB_WORKSPACE/openwrt
-        tar -zcvf Packages.tar.gz ./*
-        cp Packages.tar.gz $GITHUB_WORKSPACE/openwrt
-        cd $GITHUB_WORKSPACE/openwrt
-        rm -rf packages
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "status=success" >> ${GITHUB_OUTPUT}
-
     - name: Create release
       id: release
       uses: ncipollo/release-action@v1
@@ -148,7 +136,8 @@ jobs:
         commit: main
         token: ${{ secrets.GH_TOKEN }}
         body: |
-          - 此为高大全底包的未编译openwrt目录，包含config文件
+          - 此为高大全底包的未编译openwrt目录
+          - 用于快速获取自定义的config文件
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
 
