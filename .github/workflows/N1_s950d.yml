@@ -43,6 +43,7 @@ jobs:
         sudo -E apt update -y
         sudo -E apt full-upgrade -y
         sudo -E apt install -y $(curl -fsSL https://is.gd/depends_ubuntu_2204)
+        sudo -E apt install -y libblkid-dev
         sudo -E apt-get -y autoremove --purge
         sudo -E systemctl daemon-reload
         sudo -E apt-get clean
