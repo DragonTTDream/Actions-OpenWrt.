@@ -97,7 +97,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: openwrt-config
-        path: .config
+        path: oopenwrt/.config
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
@@ -107,13 +107,3 @@ jobs:
         retain_days: 60
         keep_minimum_runs: 60
 
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.2.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        repo:
-        keep_latest: 30
-        delete_tag_pattern:
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
