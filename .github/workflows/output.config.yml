@@ -83,7 +83,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: SSH connection to Actions (make config.build)
+    - name: SSH connection to Actions (make seed.config)
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
 
@@ -91,9 +91,8 @@ jobs:
     - name: Load seed.config into env var
       run: |
        cd openwrt
-       make defconfig
-       export SEED_CONFIG=$(cat .config)
-       echo "SEED_CONFIG=$SEED_CONFIG" | tee -a $GITHUB_ENV
+       export SEED_CONFIG=$(cat seed.config)
+       echo "SEED_CONFIG=$SEED_CONFIG" >> $GITHUB_ENV
    
     - name: Upload config
       uses: actions/upload-artifact@v2
