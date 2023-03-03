@@ -93,7 +93,7 @@ jobs:
        cd openwrt
        make defconfig
        export SEED_CONFIG=$(cat .config)
-       echo "SEED_CONFIG=$SEED_CONFIG" >> $GITHUB_ENV
+       echo "SEED_CONFIG=$SEED_CONFIG" | tee -a $GITHUB_ENV
    
     - name: Upload config
       uses: actions/upload-artifact@v2
