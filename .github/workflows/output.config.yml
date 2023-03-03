@@ -91,12 +91,19 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-    
+        
+    - name: Load seed.config into env var
+      run: |
+       cd openwrt
+       made defconfig
+       export SEED_CONFIG=$(cat seed.config)
+       echo "SEED_CONFIG=$SEED_CONFIG" >> $GITHUB_ENV
+   
     - name: Upload config
       uses: actions/upload-artifact@v2
       with:
        name: .config
-       path: openwrt/config.build
+       path: $SEED_CONFIG
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
