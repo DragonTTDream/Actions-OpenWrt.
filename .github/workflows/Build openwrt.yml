@@ -33,7 +33,6 @@ env:
   UPLOAD_RELEASE: false
   UPLOAD_base_RELEASE: false
   UPLOAD_arm_RELEASE: true
-  
   TZ: Asia/Shanghai
 
 jobs:
