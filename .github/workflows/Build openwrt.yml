@@ -189,7 +189,7 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
         
     - name: Upload arm firmware to release
-      uses: softprops/action-gh-release@v1
+      uses: ncipollo/release-action@v1
       if: ${{ env.PACKAGED_STATUS }} == 'success' && UPLOAD_arm_RELEASE=='true' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -199,7 +199,7 @@ jobs:
             打包日期：${{ env.PACKAGED_OUTPUTDATE }}
             内核版本：${{ env.KERNEL_VERSION }}
             默认IP：192.168.1.254 默认用户名密码： root/password
-        files: "${{ env.FIRMWARE }}/*,${{ env.PACKAGED_OUTPUTPATH }}/*"
+        artifacts: "${{ env.FIRMWARE }}/*,${{ env.PACKAGED_OUTPUTPATH }}/*"
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
