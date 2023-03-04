@@ -170,7 +170,7 @@ jobs:
 
     - name: Generate release tag
       id: tag
-      if: (env.UPLOAD_RELEASE == 'true' || env.UPLOAD_arm_RELEASE == 'true') && !cancelled()
+      if: (env.UPLOAD_base_RELEASE == 'true' || env.UPLOAD_arm_RELEASE == 'true') && !cancelled()
       run: |
         echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
@@ -196,6 +196,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body: |
+            release.txt
             打包日期：${{ env.PACKAGED_OUTPUTDATE }}
             内核版本：${{ env.KERNEL_VERSION }}
             默认IP：192.168.1.254 默认用户名密码： root/password
