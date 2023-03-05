@@ -23,9 +23,9 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: huge.config
+  CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P2_SH: My_local_DIY.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
@@ -44,19 +44,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    #- name: Initialization environment
-      #env:
-        #DEBIAN_FRONTEND: noninteractive
-      #run: |
-        #docker rmi `docker images -q`
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        docker rmi `docker images -q`
         
-        ##sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        ##sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
-        #sudo -E rm -rf /etc/apt/sources.list.d /usr/share/dotnet /usr/local/lib/android /opt/ghc /etc/mysql /etc/php
+        #sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        #sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
+        sudo -E rm -rf /etc/apt/sources.list.d /usr/share/dotnet /usr/local/lib/android /opt/ghc /etc/mysql /etc/php
         
-        #sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* moby* snap*
-        #[ -n "$AGENT_TOOLSDIRECTORY" ] && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-        #sudo -E apt-get -qq update
+        sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* moby* snap*
+        [ -n "$AGENT_TOOLSDIRECTORY" ] && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+        sudo -E apt-get -qq update
         
         #curl -fsSL git.io/depends-ubuntu-2004 | sort > file1
         #curl -fsSL https://is.gd/depends_ubuntu_2204 | sort > file2
@@ -67,30 +67,17 @@ jobs:
         #sudo -E apt-get -qq install libblkid-dev e2fsprogs
         ##parted blkid smartmontools e2fsprogs
         
-        #sudo -E apt-get -qq autoremove --purge
-        #sudo -E apt-get -qq clean
-        #sudo timedatectl set-timezone "$TZ"
-        #sudo mkdir -p /workdir
-        #sudo chown $USER:$GROUPS /workdir
+        echo "libblkid-dev" >> result.txt
+        echo "e2fsprogs" >> result.txt
+        curl -fsSL git.io/depends-ubuntu-2004 >> result.txt
+        curl -fsSL https://is.gd/depends_ubuntu_2204 >> result.txt
+        sort -u result.txt | xargs sudo apt-get install
         
-    - name: Initialization environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        docker rmi `docker images -q`
-        sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
-        sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* moby* snap*
-        [ -n "$AGENT_TOOLSDIRECTORY" ] && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-        sudo -E apt update
-        sudo -E apt -y install $(curl -fsSL https://is.gd/depends_ubuntu_2204)
-        sudo -E apt -y autoremove --purge
-        sudo -E systemctl daemon-reload
-        sudo -E apt clean
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-        echo "status=success" >> ${GITHUB_OUTPUT}
-        df -Th
 
     - name: Clone source code
       working-directory: /workdir
@@ -118,6 +105,9 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
+        #克隆breaking仓库general
+        svn export https://github.com/breakings/OpenWrt/trunk/general
+        #执行脚本
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to Actions
