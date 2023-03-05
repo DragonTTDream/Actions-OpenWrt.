@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/1715173329/imoutowrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -90,7 +90,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         #克隆breaking仓库general
-        svn export https://github.com/breakings/OpenWrt/trunk/general
+        #svn export https://github.com/breakings/OpenWrt/trunk/general
         #执行脚本
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
