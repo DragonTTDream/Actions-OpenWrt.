@@ -9,16 +9,14 @@
 ----------------------------
 - 发现的问题：breakings的DIY脚本内使用了$GITHUB_WORKSPACE变量，因此如果不克隆相应的代码将会编译失败
 - 修改DIY脚本中的$GITHUB_WORKSPACE为$(pwd)
-- 克隆breakings/OpenWrt/trunk/general目录
-- svn export https://github.com/breakings/OpenWrt/trunk/general
+- 克隆breakings/OpenWrt/trunk/general目录svn export https://github.com/breakings/OpenWrt/trunk/general
 - 修改后的文件保存为My_local_DIY.sh
 ----------------------------
 - 仓库内的DIY1、DIY2、feeds.conf.default、huge.config均克隆自breakings仓库
 ----------------------------
-# .github/workflows为学习实验留下
+## .github/workflows为学习实验留下
 - UPLOAD_config.yml仅用于复制出config
-- 建议使用less的语法：less 文件名
-- 通过【pageup】和【pagedown】键进行前翻页和后翻页复制出自定义的config文件
+- 建议使用less的语法：less 文件名，通过【pageup】和【pagedown】键进行前翻页和后翻页复制出自定义的config文件
 - 其余Actions均为设计编译出N1的openwrt固件，可靠性：实验状态
 
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
