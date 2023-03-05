@@ -7,13 +7,12 @@ Docker
 Dnsmasq
 IPV6支持
 IPSec VPN 服务器
-nlbmon（可选）
+nlbmon（可选）宽带流量监控
 openclash
-P910nd（可选）
+P910nd（可选）打印机服务
 Passwall
 smartdns
 Samba4
-Socat
 Socat
 TTYD #终端
 Turbo ACC
