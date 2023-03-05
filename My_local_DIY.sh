@@ -13,6 +13,7 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.1.254/g' package/base-files/files/bin/config_generate
+svn co https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-app-adguardhome
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
