@@ -45,15 +45,7 @@ make -j8 download V=s
 make -j$(nproc) ||  make -j1 V=s
 #生成结果将生成到目录。bin/targets
 
-
-mkdir -p opt/kernel opt/openwrt_packit
 #软链接，不复制
-ln -s bin/targets/armvirt/64/*.tar.gz opt/openwrt_packit/
-
-cd opt/
-git clone https://github.com/unifreq/openwrt_packit
-#需要把 Flippy预编译好的 Arm64 内核上传至 /opt/kernel目录
-
-cd openwrt_packit
-./mk_xxx.sh # xxx指代你想要生成的固件类别，例如： ./mk_s905d_n1.sh 表示生成 Phicomm N1所用的固件
+#ln -s bin/targets/armvirt/64/*.tar.gz opt/openwrt_packit/
+N1打包教程https://github.com/ophub/amlogic-s9xxx-openwrt/blob/main/README.cn.md
 
