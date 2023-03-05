@@ -14,7 +14,7 @@
 ----------------------------
 - 仓库内的DIY1、DIY2、feeds.conf.default、huge.config均克隆自breakings仓库
 ----------------------------
-## .github/workflows为学习实验留下
+#### .github/workflows为学习实验留下
 - UPLOAD_config.yml仅用于复制出config
 - 建议使用less的语法：less 文件名，通过【pageup】和【pagedown】键进行前翻页和后翻页复制出自定义的config文件
 - 其余Actions均为设计编译出N1的openwrt固件，可靠性：实验状态
