@@ -1,23 +1,23 @@
 Adguard home
-Docker
-smartdns
-openclash
-passwall
-upnp
-Dnsmasq
-支持ipv6
-Socat
-DDNS
-晶晨宝盒
-TTYD终端
-微力同步Verysync
-挂载SMB/CIFS
+amlogic #晶晨宝盒
 Aria2（可选）
-Zerotier（可选）
+DDNS
+DiskMan
+Docker
+Dnsmasq
+IPV6支持
 IPSec VPN 服务器
 nlbmon（可选）
-Turbo ACC
-DiskMan
+openclash
+P910nd（可选）
+Passwall
+smartdns
+Samba4
 Socat
-p910nd   #打印服务器模块（可选）
-webadmin  #Web管理页面设置
+Socat
+TTYD #终端
+Turbo ACC
+upnp
+Verysync #微力同步
+webadmin #Web管理页面设置
+Zerotier（可选）
