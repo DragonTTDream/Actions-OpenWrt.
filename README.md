@@ -7,10 +7,10 @@
 - breakings https://github.com/breakings/OpenWrt
 
 ----------------------------
-- 发现的问题：breakings的DIY脚本内使用了$GITHUB_WORKSPACE变量，因此如果不克隆相应的代码将会编译失败
-- 修改DIY脚本中的$GITHUB_WORKSPACE为$(pwd)
-- 克隆breakings/OpenWrt/trunk/general目录svn export https://github.com/breakings/OpenWrt/trunk/general
-- 修改后的文件保存为My_local_DIY.sh
+- 发现的问题：breakings的DIY脚本内使用了 `$GITHUB_WORKSPACE` 变量，因此如果不克隆相应的代码将会编译失败
+- 修改DIY脚本中的 `$GITHUB_WORKSPACE` 为 `$(pwd)`
+- 克隆 `breakings/OpenWrt/trunk/general` 目录 `svn export https://github.com/breakings/OpenWrt/trunk/general`
+- 修改后的文件保存为 `My_local_DIY.sh`
 ----------------------------
 - 仓库内的DIY1、DIY2、feeds.conf.default、huge.config均克隆自breakings仓库
 ----------------------------
