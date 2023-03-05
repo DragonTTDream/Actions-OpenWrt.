@@ -1,25 +1,25 @@
-感谢
- 源码来源： Lean 的 Openwrt 源码仓库 https://github.com/coolsnowwolf/lede
- 脚本来源： P3TERX 的 使用 GitHub Actions 云编译 OpenWrt https://github.com/P3TERX/Actions-OpenWrt
- 打包脚本： Flippy 的 OpenWrt 打包脚本 Actions https://github.com/ophub/flippy-openwrt-actions
- 参考学习来源：
- huangqian8 https://github.com/huangqian8/Cloud-N1-OpenWrt
- breakings https://github.com/breakings/OpenWrt
+*感谢*
+ -源码来源： Lean 的 Openwrt 源码仓库 https://github.com/coolsnowwolf/lede
+ -脚本来源： P3TERX 的 使用 GitHub Actions 云编译 OpenWrt https://github.com/P3TERX/Actions-OpenWrt
+ -打包脚本： Flippy 的 OpenWrt 打包脚本 Actions https://github.com/ophub/flippy-openwrt-actions
+ -参考学习来源：
+ -huangqian8 https://github.com/huangqian8/Cloud-N1-OpenWrt
+ -breakings https://github.com/breakings/OpenWrt
 
 ----------------------------
-发现的问题：breakings的DIY脚本内使用了$GITHUB_WORKSPACE变量，因此如果不克隆相应的代码将会编译失败
-修改DIY脚本中的$GITHUB_WORKSPACE为$(pwd)
-克隆breakings/OpenWrt/trunk/general目录
-svn export https://github.com/breakings/OpenWrt/trunk/general
-#修改后的文件保存为My_local_DIY.sh
+-发现的问题：breakings的DIY脚本内使用了$GITHUB_WORKSPACE变量，因此如果不克隆相应的代码将会编译失败
+-修改DIY脚本中的$GITHUB_WORKSPACE为$(pwd)
+-克隆breakings/OpenWrt/trunk/general目录
+-svn export https://github.com/breakings/OpenWrt/trunk/general
+-修改后的文件保存为My_local_DIY.sh
 ----------------------------
-仓库内的DIY1、DIY2、feeds.conf.default、huge.config均克隆自breakings仓库
+-仓库内的DIY1、DIY2、feeds.conf.default、huge.config均克隆自breakings仓库
 ----------------------------
 #.github/workflows为学习实验留下
-UPLOAD_config.yml仅用于复制出config
-建议使用less的语法：less 文件名
-通过【pageup】和【pagedown】键进行前翻页和后翻页复制出自定义的config文件
-其余Actions均为设计编译出N1的openwrt固件，可靠性：实验状态
+-UPLOAD_config.yml仅用于复制出config
+-建议使用less的语法：less 文件名
+-通过【pageup】和【pagedown】键进行前翻页和后翻页复制出自定义的config文件
+-其余Actions均为设计编译出N1的openwrt固件，可靠性：实验状态
 
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
