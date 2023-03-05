@@ -1,5 +1,5 @@
-Docker
 Adguard home
+Docker
 smartdns
 openclash
 passwall
@@ -7,7 +7,7 @@ upnp
 Dnsmasq
 支持ipv6
 Socat
-动态DNS
+DDNS
 晶晨宝盒
 TTYD终端
 微力同步Verysync
@@ -15,5 +15,6 @@ TTYD终端
 Aria2（可选）
 Zerotier（可选）
 IPSec VPN 服务器
+nlbmon（可选）
 Turbo ACC
 DiskMan
