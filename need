@@ -12,7 +12,7 @@ openclash
 P910nd（可选）打印机服务
 Passwall
 smartdns
-Samba4
+Samba4 #挂载SMB/CIFS
 Socat
 TTYD #终端
 Turbo ACC
