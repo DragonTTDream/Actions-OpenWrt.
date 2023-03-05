@@ -44,3 +44,12 @@ make -j8 download V=s
 
 make -j$(nproc) ||  make -j1 V=s
 #生成结果将生成到目录。bin/targets
+
+
+mkdir -p opt/kernel
+cd opt/kernel
+curl -LJO https://github.com/breakings/OpenWrt/raw/main/opt/kernel/5.15.98/*
+cd /opt
+git clone https://github.com/unifreq/openwrt_packit
+ln -s /home/loong/immortalwrt/bin/targets/armvirt/64/openwrt-armvirt-64-default-rootfs.tar.gz /home/loong/immortalwrt/opt/openwrt_packit/openwrt-armvirt-64-default-rootfs.tar.gz
+
