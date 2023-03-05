@@ -20,3 +20,4 @@ Turbo ACC
 DiskMan
 Socat
 p910nd   #打印服务器模块（可选）
+webadmin  #Web管理页面设置
