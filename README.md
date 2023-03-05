@@ -1,5 +1,6 @@
 # 感谢
-- 源码来源： Lean 的 Openwrt 源码仓库 https://github.com/coolsnowwolf/lede
+- 源码来源1： Lean 的 Openwrt 源码仓库 https://github.com/coolsnowwolf/lede
+- 源码来源2： 天灵的源码仓库 https://github.com/1715173329/imoutowrt
 - 脚本来源： P3TERX 的 使用 GitHub Actions 云编译 OpenWrt https://github.com/P3TERX/Actions-OpenWrt
 - 打包脚本： Flippy 的 OpenWrt 打包脚本 Actions https://github.com/ophub/flippy-openwrt-actions
 - 参考学习来源：
