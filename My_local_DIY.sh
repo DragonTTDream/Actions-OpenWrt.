@@ -26,6 +26,11 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 #Turbo ACC
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/shortcut-fe
 
+#openclash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+
+#添加smartdns
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
