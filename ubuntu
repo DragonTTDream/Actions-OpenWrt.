@@ -51,3 +51,18 @@ N1打包教程https://github.com/ophub/amlogic-s9xxx-openwrt/blob/main/README.cn
 删减软件包：
 rm -rf ./tmp
 make clean
+
+当修改了OpenWrt编译时的架构时，最好先进行清除，以确保更改能够正确生效。以下是可能需要执行的指令：
+make clean - 清除编译缓存和生成的文件，这将确保重新编译的源代码不会与旧文件冲突。
+make dirclean - 清除所有编译生成的文件和目录，这将删除整个编译树。
+make distclean - 在make dirclean的基础上，还清除配置文件，使得重新配置环境。
+make menuconfig - 如果更改了架构，则可能需要在此步骤中重新配置选项。
+请注意，这些命令将清除所有已生成的文件，包括您添加的自定义文件。因此，请确保在执行这些命令之前先备份这些文件。
+
+如果是更新源码，可以执行以下步骤：
+进入openwrt目录：cd openwrt
+更新源码：git pull
+更新feeds：./scripts/feeds update -a
+安装新的packages：./scripts/feeds install -a
+重新配置：make menuconfig
+注意，更新源码后可能需要重新配置和编译，具体情况取决于更新内容和是否涉及编译环境的变化。
