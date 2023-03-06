@@ -24,7 +24,9 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 #sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 #Turbo ACC
-
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe/fast-classifier package/fast-classifier
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe/fast-classifier package/shortcut-fe
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe/fast-classifier package/simulated-driver
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
