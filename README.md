@@ -6,6 +6,7 @@
 - 参考学习来源：
 - huangqian8 https://github.com/huangqian8/Cloud-N1-OpenWrt
 - breakings https://github.com/breakings/OpenWrt
+- ophub https://github.com/ophub/amlogic-s9xxx-openwrt
 
 ----------------------------
 - 发现的问题：breakings的DIY脚本内使用了 `$GITHUB_WORKSPACE` 变量，因此如果不克隆相应的代码将会编译失败
