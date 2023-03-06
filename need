@@ -5,6 +5,7 @@ DDNS
 DiskMan
 Dockerman
 Dnsmasq
+mosdns (可选)
 IPSec VPN 服务器
 nlbmon（可选）宽带流量监控
 Luci #web管理界面
