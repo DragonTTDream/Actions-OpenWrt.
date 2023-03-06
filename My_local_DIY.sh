@@ -24,7 +24,7 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 #sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 #Turbo ACC
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/shortcut-fe
+#ssvn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/shortcut-fe
 
 
 ./scripts/feeds update -a
