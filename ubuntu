@@ -24,6 +24,7 @@ cd imoutowrt
 ./scripts/feeds install -a
 
 sudo apt install subversion
+curl -O https://raw.githubusercontent.com/DragonTTDream/My-Actions-OpenWrt/main/My_local_DIY.sh
 chmod +x DIY.sh
 ./DIY.sh
 ./scripts/feeds update -a
