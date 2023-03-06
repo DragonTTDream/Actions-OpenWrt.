@@ -48,4 +48,6 @@ make -j$(nproc) ||  make -j1 V=s
 #软链接，不复制
 #ln -s bin/targets/armvirt/64/*.tar.gz opt/openwrt_packit/
 N1打包教程https://github.com/ophub/amlogic-s9xxx-openwrt/blob/main/README.cn.md
-
+删减软件包：
+rm -rf ./tmp
+make clean
