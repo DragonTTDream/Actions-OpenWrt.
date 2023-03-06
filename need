@@ -3,9 +3,8 @@ amlogic #晶晨宝盒
 Aria2（可选）
 DDNS
 DiskMan
-Docker
+Dockerman
 Dnsmasq
-IPV6支持
 IPSec VPN 服务器
 nlbmon（可选）宽带流量监控
 Luci #web管理界面
@@ -22,5 +21,6 @@ Verysync #微力同步
 webadmin #Web管理页面设置
 Zerotier（可选）
 ————————————————————
+Extra packages-ipv6-helper IPV6支持
 Lcui-collections-luci web支持
 luci-i18n-base-zh-cn 中文语言包
