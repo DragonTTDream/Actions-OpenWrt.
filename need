@@ -8,6 +8,7 @@ Dnsmasq
 mosdns (可选)
 IPSec VPN 服务器
 nlbwmon（可选）宽带流量监控
+netdata （可选）实时监控
 Luci #web管理界面
 openclash
 P910nd（可选）打印机服务
